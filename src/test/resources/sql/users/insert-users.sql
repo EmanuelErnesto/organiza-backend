@@ -1,0 +1,3 @@
+INSERT INTO tb_users (id, name, email, password, balance, role) VALUES ('7e5f9728-09d1-4b83-a062-07f594f7b6a1', 'João', 'joao@email.com', '$2a$12$zbj5xY7SD.dmSr.MExYDnOyF6NWszNwtl6Wd/ZZZDYUrZ83qHyE8q', 0.00, 'ROLE_ADMIN');
+INSERT INTO tb_users (id, name, email, password, balance, role) VALUES ('e9b0a6a5-81e0-4520-9370-5c17b646ef05', 'Ana Maria', 'ana@email.com', '$2a$12$htiZjmB/PafpGM5w4QzZ7ejaWoPCUbY6W87U85BJuwuqB9C9ikx.e', 0.00 ,'ROLE_CLIENT');
+INSERT INTO tb_users (id, name, email, password, balance, role) VALUES ('67f45f91-7ac2-4ef4-8b3f-1d57a6a41b93', 'Maria', 'maria@email.com', '$2a$12$C/uKxHFQ7vqGX8wiRN0ojuPchq4OzRFs3b.rCsPbTRtYjQuoZhf6C', 0.00 ,'ROLE_CLIENT');
