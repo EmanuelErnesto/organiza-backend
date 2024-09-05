@@ -1,0 +1,27 @@
+services:
+  db:
+    container_name: api_database
+    image: postgres:latest
+    restart: unless-stopped
+    ports:
+      - ${WEBSERVER_DB_PORT-5432}:5432
+    environment:
+      POSTGRES_USER: ${DB_POSTGRES_USER}
+      POSTGRES_PASSWORD: ${DB_POSTGRES_PASSWORD}
+      POSTGRES_DB: ${DB_POSTGRES_NAME}
+    volumes:
+      - .docker/postgresql/data:/var/lib/postgresql/data
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4:latest
+    restart: unless-stopped
+    ports:
+      - 8081:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+    depends_on:
+      - db
+    volumes:
+      - .docker/pgadmin/data:/var/lib/pgadmin
