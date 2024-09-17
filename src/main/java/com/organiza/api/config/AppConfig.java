@@ -1,8 +1,7 @@
 package com.organiza.api.config;
 
 import com.organiza.api.modules.transactions.domain.dtos.mappers.TransactionMapper;
-import com.organiza.api.modules.users.infra.database.repositories.UserRepository;
-import lombok.RequiredArgsConstructor;
+import com.organiza.api.modules.users.infra.database.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
