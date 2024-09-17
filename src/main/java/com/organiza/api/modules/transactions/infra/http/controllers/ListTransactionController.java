@@ -48,7 +48,7 @@ public class ListTransactionController {
     @PreAuthorize("hasAnyRole('ADMIN', 'CLIENT')")
     public ResponseEntity<List<TransactionResponseDto>> execute(@Valid @RequestBody FindUserTransactionsDto body){
 
-        List<TransactionModel> transactions = listUserTransactionService.execute(UUID.fromString(body.getId()));
+        List<TransactionModel> transactions = listUserTransactionService.execute(UUID.fromString(body.getUser_id()));
 
         return ResponseEntity.ok(TransactionMapper.mappingToTransactionListResponse(transactions));
 
