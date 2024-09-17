@@ -3,7 +3,7 @@ package com.organiza.api.modules.users.domain.dtos.mappers;
 
 import com.organiza.api.modules.users.domain.dtos.CreateUserDto;
 import com.organiza.api.modules.users.domain.dtos.UserResponseDto;
-import com.organiza.api.modules.users.infra.database.entities.UserModel;
+import com.organiza.api.modules.users.infra.database.entity.UserModel;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
 

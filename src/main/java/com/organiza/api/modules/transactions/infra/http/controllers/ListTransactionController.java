@@ -5,7 +5,7 @@ import com.organiza.api.http.exception.ApplicationError;
 import com.organiza.api.modules.transactions.domain.dtos.FindUserTransactionsDto;
 import com.organiza.api.modules.transactions.domain.dtos.TransactionResponseDto;
 import com.organiza.api.modules.transactions.domain.dtos.mappers.TransactionMapper;
-import com.organiza.api.modules.transactions.infra.database.entities.TransactionModel;
+import com.organiza.api.modules.transactions.infra.database.entity.TransactionModel;
 import com.organiza.api.modules.transactions.services.ListUserTransactionService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
@@ -44,7 +44,7 @@ public class ListTransactionController {
             @ApiResponse(responseCode = "401", description = "Access denied",
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApplicationError.class))),
     })
-    @GetMapping("/list")
+    @GetMapping()
     @PreAuthorize("hasAnyRole('ADMIN', 'CLIENT')")
     public ResponseEntity<List<TransactionResponseDto>> execute(@Valid @RequestBody FindUserTransactionsDto body){
 

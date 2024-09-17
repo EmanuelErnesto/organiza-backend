@@ -1,6 +1,6 @@
 package com.organiza.api.jwt;
 
-import com.organiza.api.modules.users.infra.database.entities.UserModel;
+import com.organiza.api.modules.users.infra.database.entity.UserModel;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
 

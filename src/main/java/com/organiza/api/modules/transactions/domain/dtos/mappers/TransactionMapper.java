@@ -3,16 +3,13 @@ package com.organiza.api.modules.transactions.domain.dtos.mappers;
 import com.organiza.api.modules.transactions.domain.dtos.CreateTransactionDto;
 import com.organiza.api.modules.transactions.domain.dtos.TransactionResponseDto;
 import com.organiza.api.modules.transactions.domain.dtos.UpdateTransactionDto;
-import com.organiza.api.modules.transactions.infra.database.entities.TransactionModel;
-import com.organiza.api.modules.users.infra.database.entities.UserModel;
-import com.organiza.api.modules.users.infra.database.repositories.UserRepository;
+import com.organiza.api.modules.transactions.infra.database.entity.TransactionModel;
+import com.organiza.api.modules.users.infra.database.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.UUID;

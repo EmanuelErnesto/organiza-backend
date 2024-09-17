@@ -2,9 +2,9 @@ package com.organiza.api.modules.transactions.services;
 
 import com.organiza.api.exception.HttpNotFoundException;
 import com.organiza.api.modules.transactions.domain.dtos.ShowOneUserTransactionDto;
-import com.organiza.api.modules.transactions.infra.database.entities.TransactionModel;
-import com.organiza.api.modules.transactions.infra.database.repositories.TransactionRepository;
-import com.organiza.api.modules.users.infra.database.repositories.UserRepository;
+import com.organiza.api.modules.transactions.infra.database.entity.TransactionModel;
+import com.organiza.api.modules.transactions.infra.database.repository.TransactionRepository;
+import com.organiza.api.modules.users.infra.database.repository.UserRepository;
 import com.organiza.api.shared.common.utils.consts.TransactionsErrorConsts;
 import com.organiza.api.shared.common.utils.consts.UserErrorConsts;
 import lombok.RequiredArgsConstructor;

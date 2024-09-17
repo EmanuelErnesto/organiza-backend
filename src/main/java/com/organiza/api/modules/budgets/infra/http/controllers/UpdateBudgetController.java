@@ -1,11 +1,15 @@
-package com.organiza.api.modules.transactions.infra.http.controllers;
+package com.organiza.api.modules.budgets.infra.http.controllers;
 
 import com.organiza.api.http.exception.ApplicationError;
-import com.organiza.api.modules.transactions.domain.dtos.ShowOneUserTransactionDto;
+import com.organiza.api.modules.budgets.domain.BudgetResponseDto;
+import com.organiza.api.modules.budgets.domain.UpdateBudgetDto;
+import com.organiza.api.modules.budgets.domain.mappers.BudgetMapper;
+import com.organiza.api.modules.budgets.infra.database.entity.BudgetModel;
+import com.organiza.api.modules.budgets.services.UpdateBudgetService;
+import com.organiza.api.modules.transactions.domain.dtos.CreateTransactionDto;
 import com.organiza.api.modules.transactions.domain.dtos.TransactionResponseDto;
 import com.organiza.api.modules.transactions.domain.dtos.mappers.TransactionMapper;
 import com.organiza.api.modules.transactions.infra.database.entity.TransactionModel;
-import com.organiza.api.modules.transactions.services.ShowTransactionService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -14,42 +18,45 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.UUID;
-
-@Tag(name = "Transaction")
+@Slf4j
+@Tag(name = "Budgets")
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/v1/transactions")
-public class ShowTransactionController {
+@RequestMapping("/api/v1/budgets")
+public class UpdateBudgetController {
 
-    private final ShowTransactionService showTransactionService;
+    private final UpdateBudgetService updateBudgetService;
 
-    @Operation(summary = "Show one transaction", description = "endpoint that retrieves one transaction of an existing user",
+    @Operation(summary = "Update one budget", description = "endpoint that update one budget of a existent user",
             responses = {
-                    @ApiResponse(responseCode = "200", description = "Transaction retrieved successfully",
+                    @ApiResponse(responseCode = "200", description = "budget updated successfully",
                             content = @Content(mediaType = "application/json",
-                                    array = @ArraySchema(schema = @Schema(implementation = TransactionResponseDto.class)))),
+                                    array = @ArraySchema(schema = @Schema(implementation = BudgetResponseDto.class)))),
                     @ApiResponse(responseCode = "403", description = "User doesn't have permission to access this resource",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApplicationError.class))),
                     @ApiResponse(responseCode = "401", description = "Access denied",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApplicationError.class))),
-                    @ApiResponse(responseCode = "404", description = "Transaction not found",
+                    @ApiResponse(responseCode = "404", description = "Budget not found",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApplicationError.class))),
                     @ApiResponse(responseCode = "404", description = "User not found",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApplicationError.class))),
             })
-    @GetMapping("/{id}")
+
+    @PutMapping("/{id}")
     @PreAuthorize("hasAnyRole('ADMIN', 'CLIENT')")
-    public ResponseEntity<TransactionResponseDto> execute(
+    public ResponseEntity<BudgetResponseDto> execute(
             @PathVariable("id") String id,
-            @Valid @RequestBody ShowOneUserTransactionDto body) {
+            @Valid @RequestBody UpdateBudgetDto body
+            ) {
 
-        TransactionModel transaction = showTransactionService.execute(UUID.fromString(id), body);
+        BudgetModel budget = updateBudgetService.execute(body, id);
 
-        return ResponseEntity.ok(TransactionMapper.mappingToTransactionResponse(transaction));
+        return ResponseEntity.ok(BudgetMapper.mappingToBudgetResponse(budget));
+
     }
 }

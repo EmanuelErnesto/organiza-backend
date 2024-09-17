@@ -3,7 +3,7 @@ package com.organiza.api.modules.users.infra.http.controllers;
 import com.organiza.api.http.exception.ApplicationError;
 import com.organiza.api.modules.users.domain.dtos.UserResponseDto;
 import com.organiza.api.modules.users.domain.dtos.mappers.UserMapper;
-import com.organiza.api.modules.users.infra.database.entities.UserModel;
+import com.organiza.api.modules.users.infra.database.entity.UserModel;
 import com.organiza.api.modules.users.services.ListUserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
