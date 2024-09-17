@@ -1,7 +1,7 @@
 package com.organiza.api.jwt;
 
-import com.organiza.api.modules.users.infra.database.entities.UserModel;
-import com.organiza.api.modules.users.infra.database.repositories.UserRepository;
+import com.organiza.api.modules.users.infra.database.entity.UserModel;
+import com.organiza.api.modules.users.infra.database.repository.UserRepository;
 import com.organiza.api.shared.common.utils.consts.UserErrorConsts;
 import com.organiza.api.exception.HttpNotFoundException;
 import lombok.RequiredArgsConstructor;
