@@ -1,4 +1,4 @@
-package com.organiza.api.modules.users.infra.database.entities;
+package com.organiza.api.modules.users.infra.database.entity;
 
 
 import jakarta.persistence.Entity;

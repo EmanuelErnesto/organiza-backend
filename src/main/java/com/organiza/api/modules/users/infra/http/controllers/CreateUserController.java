@@ -5,7 +5,7 @@ import com.organiza.api.http.exception.ApplicationError;
 import com.organiza.api.modules.users.domain.dtos.CreateUserDto;
 import com.organiza.api.modules.users.domain.dtos.UserResponseDto;
 import com.organiza.api.modules.users.domain.dtos.mappers.UserMapper;
-import com.organiza.api.modules.users.infra.database.entities.UserModel;
+import com.organiza.api.modules.users.infra.database.entity.UserModel;
 import com.organiza.api.modules.users.services.CreateUserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;

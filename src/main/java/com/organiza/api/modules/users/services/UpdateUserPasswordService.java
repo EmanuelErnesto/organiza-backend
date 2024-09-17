@@ -2,8 +2,8 @@ package com.organiza.api.modules.users.services;
 
 
 import com.organiza.api.exception.HttpBadRequestException;
-import com.organiza.api.modules.users.infra.database.entities.UserModel;
-import com.organiza.api.modules.users.infra.database.repositories.UserRepository;
+import com.organiza.api.modules.users.infra.database.entity.UserModel;
+import com.organiza.api.modules.users.infra.database.repository.UserRepository;
 import com.organiza.api.shared.common.utils.consts.UserErrorConsts;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;

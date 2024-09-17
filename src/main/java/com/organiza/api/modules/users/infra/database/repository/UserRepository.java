@@ -1,6 +1,6 @@
-package com.organiza.api.modules.users.infra.database.repositories;
+package com.organiza.api.modules.users.infra.database.repository;
 
-import com.organiza.api.modules.users.infra.database.entities.UserModel;
+import com.organiza.api.modules.users.infra.database.entity.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
