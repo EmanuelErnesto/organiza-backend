@@ -1,6 +1,6 @@
-    package com.organiza.api.modules.transactions.infra.database.entities;
+    package com.organiza.api.modules.transactions.infra.database.entity;
 
-    import com.organiza.api.modules.users.infra.database.entities.UserModel;
+    import com.organiza.api.modules.users.infra.database.entity.UserModel;
     import jakarta.persistence.*;
     import lombok.Getter;
     import lombok.NoArgsConstructor;
