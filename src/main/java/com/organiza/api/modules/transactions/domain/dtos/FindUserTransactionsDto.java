@@ -13,5 +13,5 @@ public class FindUserTransactionsDto {
 
     @NotBlank
     @Pattern(regexp = "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$", message = "Invalid UUID format")
-    String id;
+    String user_id;
 }

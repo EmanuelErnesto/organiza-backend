@@ -12,6 +12,7 @@ import java.security.Key;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.UUID;
 
 @Slf4j
 public class JwtUtils {
@@ -38,12 +39,13 @@ public class JwtUtils {
         return Date.from(end.atZone(ZoneId.systemDefault()).toInstant());
     }
 
-    public static JwtToken createToken(String email, String role){
+    public static JwtToken createToken(String email, UUID id, String role){
         Date issuedAt = new Date();
         Date limit = toExpireDate(issuedAt);
 
         String token = Jwts.builder()
                 .setHeaderParam("typ", "jwt")
+                .claim("id", id.toString())
                 .setSubject(email)
                 .setIssuedAt(issuedAt)
                 .setExpiration(limit)
