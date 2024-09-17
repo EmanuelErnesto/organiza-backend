@@ -1,7 +1,7 @@
 package com.organiza.api.modules.transactions.services;
 
-import com.organiza.api.modules.transactions.infra.database.entities.TransactionModel;
-import com.organiza.api.modules.transactions.infra.database.repositories.TransactionRepository;
+import com.organiza.api.modules.transactions.infra.database.entity.TransactionModel;
+import com.organiza.api.modules.transactions.infra.database.repository.TransactionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
