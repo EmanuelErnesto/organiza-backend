@@ -4,7 +4,7 @@ import com.organiza.api.http.exception.ApplicationError;
 import com.organiza.api.modules.transactions.domain.dtos.ShowOneUserTransactionDto;
 import com.organiza.api.modules.transactions.domain.dtos.TransactionResponseDto;
 import com.organiza.api.modules.transactions.domain.dtos.mappers.TransactionMapper;
-import com.organiza.api.modules.transactions.infra.database.entities.TransactionModel;
+import com.organiza.api.modules.transactions.infra.database.entity.TransactionModel;
 import com.organiza.api.modules.transactions.services.ShowTransactionService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;

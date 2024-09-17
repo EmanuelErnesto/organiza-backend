@@ -5,7 +5,7 @@ import com.organiza.api.modules.transactions.domain.dtos.CreateTransactionDto;
 
 import com.organiza.api.modules.transactions.domain.dtos.TransactionResponseDto;
 import com.organiza.api.modules.transactions.domain.dtos.mappers.TransactionMapper;
-import com.organiza.api.modules.transactions.infra.database.entities.TransactionModel;
+import com.organiza.api.modules.transactions.infra.database.entity.TransactionModel;
 import com.organiza.api.modules.transactions.services.CreateTransactionService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -14,7 +14,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

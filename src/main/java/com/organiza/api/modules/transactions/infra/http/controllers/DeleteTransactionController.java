@@ -11,18 +11,18 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
 @Tag(name = "Transaction")
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/v1/transactions")
 public class DeleteTransactionController {
 
-    private final DeleteTransactionService deleteTransactionService;
+    @Autowired
+    private DeleteTransactionService deleteTransactionService;
 
     @Operation(summary = "delete one transaction", description = "endpoint that delete one existent transaction.",
             responses = {
